@@ -118,6 +118,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\logo-mark.svg" />
+    <Content Include="Content\OnlineTest.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="EditAssessment.aspx" />

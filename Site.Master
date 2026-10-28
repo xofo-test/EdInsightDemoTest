@@ -2,35 +2,57 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title>edInsight Demo</title>
+    <title>edInsight</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
 <body>
 <form id="form1" runat="server">
     <div class="topbar">
-        <div class="brand"><img src="Content/logo-mark.svg" alt="edInsight" /><span>edInsight</span></div>
-        <div class="search"><span class="glass">⌕</span><span>Search Students</span></div>
-        <div class="account"><div class="pill">Secondary Account</div><br/><span>Demo Administrator ▾ &nbsp; ● &nbsp; ?</span></div>
+        <a class="brand" href="Default.aspx"><img src="Content/logo-mark.svg" alt="" /><span><b>ed</b>Insight</span></a>
+        <div class="search">
+            <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
+            <input type="text" placeholder="Search Students" />
+        </div>
+        <div class="account">
+            <svg class="shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" /></svg>
+            <div class="who"><b>Secondary Account</b><span>Superintendent - edInsight Demo Dis...</span></div>
+            <span class="caret">&#9662;</span>
+        </div>
+        <span class="round bell"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0z" /></svg><i>1</i></span>
+        <span class="round help">?</span>
+        <span class="burger"><i></i><i></i><i></i></span>
     </div>
-    <div class="toolbar">
+    <div class="menubar">
         <a href="Default.aspx">Home</a>
         <a href="StandardsMastery.aspx">Reports</a>
         <a href="EditAssessment.aspx">Local Assessment</a>
-        <a href="OnlineTest.aspx">MTSS</a>
-        <a href="StandardsMastery.aspx">Data Depot</a>
-        <a href="EditAssessment.aspx">Curriculum</a>
-    </div>
-    <div class="subbar">
-        <span>⌕</span>&nbsp; <span>Search through the menus</span>
-        <span style="margin-left:auto">×</span>
+        <a href="#">MTSS</a>
+        <a href="#">Data Depot</a>
+        <a href="#">Curriculum</a>
+        <div class="menusearch">
+            <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
+            <input type="text" placeholder="Search through the menus" />
+            <span class="clear">&#10005;</span>
+        </div>
     </div>
     <div class="page">
         <asp:ContentPlaceHolder ID="MainContent" runat="server" />
     </div>
-    <div class="footer">edInsight Demo &nbsp;&nbsp; About &nbsp;&nbsp; Contact Us &nbsp;&nbsp; Privacy Policy <span class="links">◉ &nbsp; ◉ &nbsp; ◉</span></div>
+    <div class="footer">
+        <div class="footer-row">
+            <img src="Content/logo-mark.svg" alt="" />
+            <a href="#">About</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a>
+            <span class="social"><i>f</i><i>t</i><i>in</i></span>
+        </div>
+        <div class="footer-row fine">
+            <span>OnHand Schools Copyright 2021. All rights reserved.</span>
+            <span class="version">edInsight 2026.09.0</span>
+        </div>
+    </div>
 </form>
 </body>
 </html>

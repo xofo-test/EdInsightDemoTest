@@ -1,49 +1,59 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StandardsMastery.aspx.cs" Inherits="Edinsight.StandardsMastery" MasterPageFile="~/Site.Master" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="StandardsMastery.aspx.cs" Inherits="Edinsight.StandardsMastery" MasterPageFile="~/Site.Master" Title="Standards Mastery Report by Class" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<div class="page-title"><span class="icon">▣</span>Standards Mastery Report by Class</div>
-<div class="content">
-    <div class="heading-info">Local Assessment&nbsp; : 2026<br/>Student Group&nbsp; : Demo - Grade 6 Science</div>
-    <div class="actions">
-        <button class="btn" type="button" onclick="showToast('Mock PDF export started')">▣ Print to PDF</button>
-        <button class="btn" type="button" onclick="showToast('Mock CSV export started')">▤ Print to CSV</button>
-        <button class="btn blue" type="button" onclick="showToast('Mock individual reports generated')">Print Individual Student Reports to PDF</button>
-    </div>
-    <div class="filter-grid">
-        <label>Report Option</label><select><option>Standards Mastery</option><option>Achievement Levels</option><option>Pass or Fail</option></select>
-        <label>Data Sources</label><select><option>All items checked</option><option>Local Assessments</option><option>District Assessments</option></select>
-        <label>Assessment</label><select><option>2026 Science Benchmark</option><option>Quarter 1 Assessment</option></select>
-        <label>Student Group</label><select><option>Demo - Grade 6 Science</option><option>All Grade 6</option></select>
-        <label>Assessment Type</label><select><option>All assessment types</option><option>Local Assessment</option></select>
-        <label>Content Types</label><select><option>All items checked</option><option>Selected standards</option></select>
-    </div>
-    <table class="legend">
-        <tr><th>Level Name</th><th>Level Cutoff</th><th>Level Color</th></tr>
-        <tr><td>75-100</td><td>75</td><td class="swatch greenbg"></td></tr>
-        <tr><td>50-74</td><td>50</td><td class="swatch yellowbg"></td></tr>
-        <tr><td>0-49</td><td>0</td><td class="swatch redbg"></td></tr>
-    </table>
-    <button class="btn blue hide-desc" type="button" onclick="toggleDescriptions()">HIDE DESCRIPTIONS</button>
-    <table class="mastery-table" id="masteryTable">
-        <thead><tr><th class="code">Standard Code</th><th class="desc">Standard Description</th><th class="avg">Class Average</th><th><div class="vertical">Jordan, Avery</div></th><th><div class="vertical">Maya, Chen</div></th><th><div class="vertical">Noah, Patel</div></th></tr></thead>
-        <tbody>
-            <tr><td class="code">SC.6.N.1.1</td><td class="desc">Define a problem, use reference materials, plan investigations, collect data and defend conclusions.</td><td class="avg">67%</td><td class="score yellow">67%</td><td class="score red">42%</td><td class="score green">82%</td></tr>
-            <tr><td class="code">SC.6.N.1.2</td><td class="desc">Explain why scientific investigations should be replicable.</td><td class="avg">74%</td><td class="score green">80%</td><td class="score yellow">64%</td><td class="score green">78%</td></tr>
-            <tr><td class="code">SC.6.N.1.4</td><td class="desc">Discuss, compare and negotiate methods used to collect and analyze information.</td><td class="avg">55%</td><td class="score yellow">55%</td><td class="score red">38%</td><td class="score yellow">70%</td></tr>
-            <tr><td class="code">SC.6.P.13.1</td><td class="desc">Investigate and describe types of forces and their effects on objects.</td><td class="avg">81%</td><td class="score green">88%</td><td class="score green">79%</td><td class="score green">76%</td></tr>
-            <tr><td class="code">MA.6.NSO.2.1</td><td class="desc">Extend prior understanding of multiplication and division to solve practical problems.</td><td class="avg">48%</td><td class="score red">45%</td><td class="score yellow">52%</td><td class="score red">47%</td></tr>
-            <tr><td class="code">ELA.6.R.1.1</td><td class="desc">Analyze how text structure and evidence contribute to meaning and understanding.</td><td class="avg">73%</td><td class="score green">77%</td><td class="score yellow">66%</td><td class="score green">76%</td></tr>
-            <tr><td class="code">ELA.6.V.1.3</td><td class="desc">Apply knowledge of context clues, figurative language and word relationships.</td><td class="avg">61%</td><td class="score yellow">61%</td><td class="score red">49%</td><td class="score green">74%</td></tr>
-        </tbody>
-    </table>
+<div class="page-head">
+    <svg viewBox="0 0 30 30"><rect x="3" y="4" width="4" height="22" fill="#e8a33c"/><rect x="9" y="12" width="4" height="14" fill="#3f8fd0"/><rect x="15" y="8" width="4" height="18" fill="#58b14a"/><rect x="21" y="15" width="4" height="11" fill="#d9534f"/><rect x="2" y="26" width="25" height="1.5" fill="#555"/></svg>
+    Standards Mastery Report by Class
 </div>
-<div class="toast" id="toast"></div>
+<div class="report-meta">
+    <div><span>Local Assessment</span>: 2026</div>
+    <div><span>Student Group</span>: jj</div>
+</div>
+<div class="export-row">
+    <svg class="file-icon" viewBox="0 0 20 24"><path d="M2 1h11l5 5v17H2z" fill="#fff" stroke="#2f78b8" stroke-width="1.4"/><text x="4" y="18" font-size="6.5" font-family="Arial" font-weight="bold" fill="#2f78b8">PDF</text></svg>
+    <svg class="file-icon" viewBox="0 0 20 24"><path d="M2 1h11l5 5v17H2z" fill="#fff" stroke="#2f78b8" stroke-width="1.4"/><text x="3.5" y="18" font-size="6.5" font-family="Arial" font-weight="bold" fill="#2f78b8">CSV</text></svg>
+    <button class="shadow-btn" type="button">Print Individual Student Reports to PDF</button>
+</div>
+<div class="filters">
+    <label>Report Option</label><select><option>Standards Mastery</option></select>
+    <label>Data Sources</label><select><option>All items checked</option></select>
+    <label>Assessments</label><select><option>All items checked</option></select>
+    <label>Standard Types</label><select><option>All items checked</option></select>
+    <label>Content Types</label><select><option>All items checked</option></select>
+</div>
+<table class="levels">
+    <tr><th>Level Name</th><th>Level Cutoff</th><th>Level Color</th></tr>
+    <tr><td>75-100</td><td>75</td><td class="lv"><div class="lv-green"></div></td></tr>
+    <tr><td>50-74</td><td>50</td><td class="lv"><div class="lv-yellow"></div></td></tr>
+    <tr><td>0-49</td><td>0</td><td class="lv"><div class="lv-red"></div></td></tr>
+</table>
+<button class="shadow-btn hide-desc" type="button" onclick="toggleDescriptions(this)">HIDE DESCRIPTIONS</button>
+<table class="mastery" id="masteryTable">
+    <colgroup><col class="c-code" /><col class="c-desc" /><col class="c-avg" /><% foreach (var s in Students) { %><col class="c-stu" /><% } %></colgroup>
+    <thead>
+        <tr>
+            <th>Standard Code</th>
+            <th class="desc">Standard Description</th>
+            <th class="avg">Class Average</th>
+            <% foreach (var s in Students) { %><th class="student"><a href="#"><%: s %></a></th><% } %>
+        </tr>
+    </thead>
+    <tbody>
+    <% foreach (var r in Rows) { %>
+        <tr<%= r.Squashed ? " class=\"squashed\"" : "" %>>
+            <td class="code"><a href="#"><%: r.Code %></a></td>
+            <td class="desc"><span><%: r.Description %></span></td>
+            <td class="avg"><span><%: r.Average %>%</span></td>
+            <% foreach (var score in r.Scores) { %><td class="score"><div class="<%= Level(score) %>"><%: score %>%</div></td><% } %>
+        </tr>
+    <% } %>
+    </tbody>
+</table>
 <script>
-function toggleDescriptions(){
-  var cells=document.querySelectorAll('#masteryTable .desc');
-  var hidden=cells[0].style.display==='none';
-  cells.forEach(function(c){c.style.display=hidden?'table-cell':'none';});
-  document.querySelector('.hide-desc').innerText=hidden?'HIDE DESCRIPTIONS':'SHOW DESCRIPTIONS';
+function toggleDescriptions(btn) {
+    var table = document.getElementById('masteryTable');
+    var hide = !table.classList.contains('no-desc');
+    table.classList.toggle('no-desc', hide);
+    btn.innerText = hide ? 'SHOW DESCRIPTIONS' : 'HIDE DESCRIPTIONS';
 }
-function showToast(msg){var t=document.getElementById('toast');t.innerText=msg;t.style.display='block';setTimeout(function(){t.style.display='none'},1800);}
 </script>
 </asp:Content>
