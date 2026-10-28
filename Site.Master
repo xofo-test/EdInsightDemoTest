@@ -1,0 +1,36 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Edinsight.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>edInsight Demo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+<form id="form1" runat="server">
+    <div class="topbar">
+        <div class="brand"><img src="Content/logo-mark.svg" alt="edInsight" /><span>edInsight</span></div>
+        <div class="search"><span class="glass">⌕</span><span>Search Students</span></div>
+        <div class="account"><div class="pill">Secondary Account</div><br/><span>Demo Administrator ▾ &nbsp; ● &nbsp; ?</span></div>
+    </div>
+    <div class="toolbar">
+        <a href="Default.aspx">Home</a>
+        <a href="StandardsMastery.aspx">Reports</a>
+        <a href="EditAssessment.aspx">Local Assessment</a>
+        <a href="OnlineTest.aspx">MTSS</a>
+        <a href="StandardsMastery.aspx">Data Depot</a>
+        <a href="EditAssessment.aspx">Curriculum</a>
+    </div>
+    <div class="subbar">
+        <span>⌕</span>&nbsp; <span>Search through the menus</span>
+        <span style="margin-left:auto">×</span>
+    </div>
+    <div class="page">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    <div class="footer">edInsight Demo &nbsp;&nbsp; About &nbsp;&nbsp; Contact Us &nbsp;&nbsp; Privacy Policy <span class="links">◉ &nbsp; ◉ &nbsp; ◉</span></div>
+</form>
+</body>
+</html>
