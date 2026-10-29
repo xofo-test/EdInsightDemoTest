@@ -9,10 +9,9 @@ namespace Edinsight
             public string Description;
             public int Average;
             public int[] Scores;
-            public bool Squashed;
         }
 
-        protected static readonly string[] Students = { "Collier,Ty", "Nguyen,Pauline" };
+        public static readonly string[] Students = { "Collier,Ty", "Nguyen,Pauline" };
 
         protected static readonly Row[] Rows =
         {
@@ -27,7 +26,7 @@ namespace Edinsight
             R("SC.6.P.13.3", "Investigate and describe that an unbalanced force acting on an object changes its speed, or direction of motion, or both.", 67, 67, 67),
             R("SS.6.G.1.1", "Use latitude and longitude coordinates to understand the relationship between people and places on the Earth.", 17, 33, 0),
             R("SS.6.W.1.2", "Identify terms (decade, century, epoch, era, millennium, BC/BCE, AD/CE) and designations of time periods.", 88, 100, 75),
-            new Row { Code = "SS.6.W.1.3", Description = "Interpret primary and secondary sources.", Average = 62, Scores = new[] { 75, 50 }, Squashed = true },
+            R("SS.6.W.1.3", "Interpret primary and secondary sources.", 62, 75, 50),
             R("SS.6.W.2.1", "Compare the lifestyles of hunter-gatherers with those of settlers of early agricultural communities.", 50, 100, 0),
             R("SS.6.W.2.2", "Describe how the developments of agriculture and metallurgy related to settlement, population growth, and the emergence of civilization.", 71, 86, 57),
             R("SS.6.W.2.4", "Compare the economic, political, social, and religious institutions of ancient river civilizations.", 25, 0, 50),

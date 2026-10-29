@@ -1,58 +1,69 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Edinsight.SiteMaster" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head runat="server">
-    <title>edInsight</title>
+    <title runat="server">edInsight</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="Content/Site.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
 </head>
-<body>
+<body class="app-shell">
 <form id="form1" runat="server">
-    <div class="topbar">
-        <a class="brand" href="Default.aspx"><img src="Content/logo-mark.svg" alt="" /><span><b>ed</b>Insight</span></a>
+    <header class="topbar">
+        <a class="brand" href="Default.aspx">
+            <img src="Content/logo-mark.svg" alt="" />
+            <span><b>ed</b>Insight</span>
+        </a>
         <div class="search">
-            <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
-            <input type="text" placeholder="Search Students" />
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
+            <input type="text" placeholder="Search Students" aria-label="Search Students" />
         </div>
-        <div class="account">
-            <svg class="shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" /></svg>
-            <div class="who"><b>Secondary Account</b><span>Superintendent - edInsight Demo Dis...</span></div>
-            <span class="caret">&#9662;</span>
+        <div class="topbar-actions">
+            <div class="account">
+                <svg class="shield" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.5 9.3-8 11-4.5-1.7-8-6-8-11V5z" /></svg>
+                <div class="who"><b>Secondary Account</b><span>Superintendent &#8211; edInsight Demo Dis&#8230;</span></div>
+                <span class="caret">&#9662;</span>
+            </div>
+            <span class="round bell" title="Notifications">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0z" /></svg>
+                <i>1</i>
+            </span>
+            <span class="round help" title="Help">?</span>
+            <span class="burger" title="Menu"><i></i><i></i><i></i></span>
         </div>
-        <span class="round bell"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6v4l-2 3h16l-2-3V9a6 6 0 0 0-6-6zM10 19a2 2 0 0 0 4 0z" /></svg><i>1</i></span>
-        <span class="round help">?</span>
-        <span class="burger"><i></i><i></i><i></i></span>
-    </div>
-    <div class="menubar">
-        <a href="Default.aspx">Home</a>
-        <a href="StandardsMastery.aspx">Reports</a>
-        <a href="EditAssessment.aspx">Local Assessment</a>
-        <a href="#">MTSS</a>
-        <a href="#">Data Depot</a>
-        <a href="#">Curriculum</a>
+    </header>
+    <nav class="menubar">
+        <a class="<%= HomeMenuClass %>" href="Default.aspx">Home</a>
+        <a class="<%= ReportsMenuClass %>" href="StandardsMastery.aspx">Reports</a>
+        <a class="<%= AssessmentMenuClass %>" href="EditAssessment.aspx">Local Assessment</a>
+        <a class="menu-item" href="#">MTSS</a>
+        <a class="menu-item" href="#">Data Depot</a>
+        <a class="menu-item" href="#">Curriculum</a>
         <div class="menusearch">
-            <svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
-            <input type="text" placeholder="Search through the menus" />
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5" /><path d="M15 15l5.5 5.5" /></svg>
+            <input type="text" placeholder="Search through the menus" aria-label="Search through the menus" />
             <span class="clear">&#10005;</span>
         </div>
-    </div>
-    <div class="page">
+    </nav>
+    <main class="page">
         <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-    </div>
-    <div class="footer">
-        <div class="footer-row">
-            <img src="Content/logo-mark.svg" alt="" />
-            <a href="#">About</a><a href="#">Contact Us</a><a href="#">Privacy Policy</a>
-            <span class="social"><i>f</i><i>t</i><i>in</i></span>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-row">
+                <img class="footer-logo" src="Content/logo-mark.svg" alt="" />
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <span class="social"><i>f</i><i>t</i><i>in</i></span>
+            </div>
+            <div class="footer-row fine">
+                <span>OnHand Schools Copyright 2021. All rights reserved.</span>
+                <span>edInsight 2026.09.0</span>
+            </div>
         </div>
-        <div class="footer-row fine">
-            <span>OnHand Schools Copyright 2021. All rights reserved.</span>
-            <span class="version">edInsight 2026.09.0</span>
-        </div>
-    </div>
+    </footer>
 </form>
 </body>
 </html>
